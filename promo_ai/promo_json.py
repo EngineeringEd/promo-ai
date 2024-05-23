@@ -4,6 +4,8 @@ from llama_index.core.llms import ChatMessage, MessageRole, ChatResponse
 from llama_index.llms.ollama import Ollama
 
 from promo_ai.prompts import full_prompt, correcting_prompts
+import streamlit as st
+
 
 class PromoUnderstander:
     """
@@ -28,5 +30,10 @@ class PromoUnderstander:
     def send_message(self, msg: ChatMessage) -> ChatResponse:
         self._msgs.append(msg)
         return self._llm.chat(self._msgs)
+    
+
+@st.cache_resource()
+def make_promo_understander() -> PromoUnderstander:
+    return PromoUnderstander()
 
     
