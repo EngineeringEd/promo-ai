@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "promo-ai"
+version = "0.1.0"
+description = "Promo codes AI Tool POC"
+authors = ["edwardheaver <ed.heaver@justpark.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+main = "promo_ai.main:main"
