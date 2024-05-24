@@ -29,6 +29,9 @@ class PromoUnderstander:
     
     def send_message(self, **kwargs) -> ChatResponse:
         self._msgs.append(ChatMessage(content=str(kwargs["content"])))
+        res = self._llm.chat(self._msgs)
+        st.session_state["promo_json"] = res.message.content
+        
         return self._llm.chat(self._msgs)
     
 

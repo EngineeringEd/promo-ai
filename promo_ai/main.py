@@ -7,7 +7,7 @@ from promo_ai.prompts import complex_test
 def main():
     p = PromoUnderstander()
     second = ChatMessage(role=MessageRole.USER, content=complex_test)
-    res = p.send_message(second)
+    res = p.send_message(content=second.content)
 
     print(res)
 

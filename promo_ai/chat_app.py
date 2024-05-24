@@ -21,6 +21,7 @@ if prompt := st.chat_input():
     st.session_state.messages.append({"role": "User", "content": prompt})
     st.chat_message("user").write(prompt)
     res: AgentChatResponse = agent.chat(prompt)
+    st.chat_message("Assistant").write(st.session_state["promo_json"])
     st.chat_message("assistant").write(res.response)
     st.session_state.messages.append({"role": "Assistant", "content": res.response})
 
