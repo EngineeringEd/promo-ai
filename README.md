@@ -35,3 +35,9 @@ Run `streamlit run promo_ai/chat_app.py` to start the chat. The browser should a
 
 > N.B. Generations can take a little while depending on your hardware. With an NVidia GPU installed (Ollama will tell you if it detects one), things should happen within about 5 seconds or less. 
 
+
+### Troubleshooting
+If running any of the scripts do not work, check that the virtual environment is activated and has stuff installed inside of it.
+
+Things might error randomly. Refreshing the app/ stopping the server generally helps. Check the output from the ReAct agent. It normally says when it encounters an error or when it gets confused on what to do.
+
