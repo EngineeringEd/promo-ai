@@ -27,8 +27,8 @@ class PromoUnderstander:
             self._msgs.append(ChatMessage(role=MessageRole.SYSTEM, content=p))
 
     
-    def send_message(self, msg: ChatMessage) -> ChatResponse:
-        self._msgs.append(msg)
+    def send_message(self, **kwargs) -> ChatResponse:
+        self._msgs.append(ChatMessage(content=str(kwargs["content"])))
         return self._llm.chat(self._msgs)
     
 
