@@ -12,6 +12,10 @@ from llama_index.llms.ollama import Ollama
 
 @st.cache_resource()    
 def make_react_agent() -> ReActAgent:
+    """
+    Agent that drives the flow. Has an array of tools it selects from to commit actions.
+    """
+    
     json_creator_func = make_promo_understander().send_message
     promo_json_tool = FunctionTool.from_defaults(
         fn=json_creator_func,
