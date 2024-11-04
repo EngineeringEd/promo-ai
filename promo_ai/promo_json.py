@@ -16,7 +16,7 @@ class PromoUnderstander:
     _llm: Ollama 
 
     def __init__(self) -> None:
-        self._llm = Ollama(model="codellama", request_timeout=120, temperature=0)
+        self._llm = Ollama(model="llama3:8b-instruct-q2_K", request_timeout=120, temperature=0)
         self._msgs = []
 
         first = ChatMessage(role=MessageRole.SYSTEM, content=full_prompt)

@@ -26,7 +26,7 @@ def make_react_agent() -> ReActAgent:
 
     def create_code(**kwargs) -> str:
         print(st.session_state["promo_json"])
-        return "it did the thing"
+        return ""
 
     tools: List[BaseTool] = [
         promo_json_tool,
@@ -37,7 +37,7 @@ def make_react_agent() -> ReActAgent:
         )
     ]
 
-    llm = Ollama(model="llama3", request_timeout=120, temperature=0)
+    llm = Ollama(model="llama3:8b-instruct-q2_K", request_timeout=120, temperature=0)
     react_agent = ReActAgent.from_tools(tools=tools, llm=llm, verbose=True, context=react_prompt)
 
     return react_agent
